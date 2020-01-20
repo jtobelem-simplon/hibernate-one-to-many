@@ -1,8 +1,8 @@
-animal;catégories
-chat;mammifère
-perroquet;oiseau
-manchot;oiseau
-requin;poisson
-saumon;poisson
-cochon;mammifère
-pigeon;oiseau
+animal,catégories
+chat,mammifère
+perroquet,oiseau
+manchot,oiseau
+requin,poisson
+saumon,poisson
+cochon,mammifère
+pigeon,oiseau
