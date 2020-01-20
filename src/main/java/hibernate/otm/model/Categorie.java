@@ -1,11 +1,10 @@
 package hibernate.otm.model;
 
-import java.util.Collection;
-
-import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 
 @Entity
@@ -13,14 +12,15 @@ import javax.persistence.OneToMany;
 public class Categorie {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Basic
+	@Column(unique=true)
 	private String libelle;
 	
 	// optionnellement, on peut implémenter la relation dans l'autre sens
-	@OneToMany(mappedBy = "categorie") // le nom de l'attribut java
-	private Collection<Animal> animaux;
+//	@OneToMany(mappedBy = "categorie") // le nom de l'attribut java
+//	private Collection<Animal> animaux;
 
 	
 	public long getId() {
@@ -39,14 +39,5 @@ public class Categorie {
 		this.libelle = libelle;
 	}
 
-	public Collection<Animal> getAnimaux() {
-		return animaux;
-	}
-
-	public void setAnimaux(Collection<Animal> animaux) {
-		this.animaux = animaux;
-	}
-	
-	
 
 }
